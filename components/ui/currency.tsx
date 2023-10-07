@@ -17,7 +17,7 @@ const Currency: React.FC<CurrencyProps> = ({ value }) => {
 
     useEffect(() => {
         setIsMounted(true);
-    })
+    }, [])
 
     if (!isMounted) {
         return null;
