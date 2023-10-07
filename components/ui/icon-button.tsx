@@ -4,7 +4,7 @@ import { MouseEventHandler } from 'react'
 interface IconButtonProps {
     // รับคุณสมบัติของ react เมือเกิดเหตุการณ์ เอาเมาส์ไปคลิก
     // onClick, onMouseDown, onMouseUp, onMouseMove, และอื่นๆ.
-    onClick?: MouseEventHandler<HTMLDivElement> | undefined; // มีค่าหรือ ไม่มี มีค่าหรือไม่มีค่าก็ได้
+    onClick: MouseEventHandler<HTMLDivElement | HTMLButtonElement> | undefined; // มีค่าหรือ ไม่มี มีค่าหรือไม่มีค่าก็ได้
     icon: React.ReactElement;
     className?: string;
 }
