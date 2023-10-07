@@ -1,9 +1,11 @@
 'use client'
 import React from 'react'
+import { MouseEventHandler } from 'react';
 import Currency from '@/components/ui/currency';
 import Button from '@/components/ui/button';
 import { ShoppingCart } from 'lucide-react'
 import { Product } from '@/types'
+import useCart from '@/hooks/use-cart';
 
 interface InfoProps {
     data: Product;
@@ -11,7 +13,15 @@ interface InfoProps {
 
 const Info: React.FC<InfoProps> = ({ data }) => {
 
-    console.log(data)
+    // console.log(data)
+    const cart = useCart();
+
+
+    const onAddToCart: MouseEventHandler<HTMLButtonElement> = (event) => {
+        event.stopPropagation(); // ทำให้ เหตุการณ์อื่นที่ไม่ถูกคลิกทำงาน ทำงานเฉพาะที่คลิก
+
+        cart.addItem(data);
+    }
 
     return (
         <div >
